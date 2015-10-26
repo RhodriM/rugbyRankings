@@ -1,16 +1,7 @@
-# League Skeleton
+Rugby Rankings
 
-[![Latest Version](https://img.shields.io/github/release/thephpleague/skeleton.svg?style=flat-square)](https://github.com/thephpleague/skeleton/releases)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/thephpleague/skeleton/master.svg?style=flat-square)](https://travis-ci.org/thephpleague/skeleton)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/thephpleague/skeleton.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/skeleton/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/thephpleague/skeleton.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/skeleton)
-[![Total Downloads](https://img.shields.io/packagist/dt/league/skeleton.svg?style=flat-square)](https://packagist.org/packages/league/skeleton)
-
-**Note:** Replace `skeleton` with the correct package name in the above URLs, then delete this line.
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+php library for calculating rugby ranking points. This repo structure based vaguely on the PHP League skeleton:
+https://github.com/thephpleague/skeleton
 
 ## Install
 
@@ -23,8 +14,49 @@ $ composer require league/skeleton
 ## Usage
 
 ``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+$input = new RugbyRankings\RatingsInput(
+    $teamARating,
+    $teamBRating,
+    $teamAScore,
+    $teamBScore,
+    $isNeutralVenue,
+    $isRugbyWorldCup
+);
+
+$rankings = new \RugbyRankings\Main($input);
+
+$output = $rankings->calculate();
+
+$newTeamARating = $output->getTeamARating();
+$newTeamBRating = $output->getTeamBRating();
+```
+
+For example: if Wales were to beat England 30-3 at Twickenham ;-)
+
+``` php
+$englandRating = 79.77;
+$walesRating = 83.49;
+$englandScore = 3;
+$walesScore = 30;
+$isNeutralVenue = false;
+$isRugbyWorldCup = false;
+
+$input = new RugbyRankings\RatingsInput(
+    $englandRating,
+    $walesRating,
+    $englandScore,
+    $walesScore,
+    $isNeutralVenue,
+    $isRugbyWorldCup
+);
+
+$rankings = new \RugbyRankings\Main($input);
+
+$output = $rankings->calculate();
+
+echo 'New England rating: ' . $output->getTeamARating(); // 73.38
+echo "\n";
+echo 'New Wales rating: ' . $output->getTeamBRating();   // 84.88
 ```
 
 ## Testing
