@@ -3,14 +3,6 @@ Rugby Rankings
 php library for calculating rugby ranking points. This repo structure based vaguely on the PHP League skeleton:
 https://github.com/thephpleague/skeleton
 
-## Install
-
-Via Composer
-
-``` bash
-$ composer require league/skeleton
-```
-
 ## Usage
 
 ``` php
@@ -58,21 +50,10 @@ echo 'New England rating: ' . $output->getTeamARating(); // 73.38
 echo "\n";
 echo 'New Wales rating: ' . $output->getTeamBRating();   // 84.88
 ```
-
-## Testing
-
-``` bash
-$ phpunit
-```
-
-## Contributing
-
-Please see [CONTRIBUTING](https://github.com/thephpleague/:package_name/blob/master/CONTRIBUTING.md) for details.
-
 ## Credits
 
 - [Rhodri Morris](https://github.com/:author_username)
-- [All Contributors](https://github.com/thephpleague/:package_name/contributors)
+- [All Contributors](https://github.com/RhodriM/rugbyRankings/contributors)
 
 ## License
 
