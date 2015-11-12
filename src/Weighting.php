@@ -9,10 +9,8 @@ namespace RugbyRankings;
  * exchange points amount. This base class just has a multiplier of 1, ie does
  * not affect exchange points.
  *
- * Other Weighting classes currently extend this one, and Exchange checks for
- * instance of Weighting. Possibly use interface instead in future?
  */
-class Weighting
+abstract class Weighting
 {
     /**
      * Multiplier to adjust exchange amount.
@@ -20,13 +18,15 @@ class Weighting
      * @var float
      */
     protected $multiplier = 1;
-
+    
     /**
-     * Returns multiplier for adjusting exchange amount.
+     * Apply weighting to score and return
+     *
+     * @param float $points
      * @return float
      */
-    public function getMultiplier()
+    public function apply($points)
     {
-        return $this->multiplier;
+        return ($points * $this->multiplier);
     }
 }

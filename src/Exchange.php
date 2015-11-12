@@ -121,7 +121,7 @@ class Exchange
             }
             
             $this->exchangeAmount
-                = ($this->exchangeAmount * $weighting->getMultiplier());
+                = ($weighting->apply($this->exchangeAmount));
         }
     }
 }
