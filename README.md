@@ -1,4 +1,4 @@
-Rugby Rankings
+## Rugby Rankings
 
 php library for calculating rugby ranking points. This repo structure based vaguely on the PHP League skeleton:
 https://github.com/thephpleague/skeleton
@@ -57,4 +57,4 @@ echo 'New Wales rating: ' . $output->getTeamBRating();   // 84.88
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
