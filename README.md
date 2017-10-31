@@ -3,6 +3,8 @@
 php library for calculating rugby ranking points. This repo structure based vaguely on the PHP League skeleton:
 https://github.com/thephpleague/skeleton
 
+While I've also used this in other projects (e.g [European Rugby Club Rankings](https://rhodrimorrisblog.wordpress.com/2017/03/19/if-european-clubs-had-world-rugby-rankings/) ) it also originally served as a personal example in building a library using various php tools: code-sniffer, code-coverage etc. I probably even had it building in jenkins at some point. As such, some of it is probably over-OOP-engineered, but should anyone want to create their own ranking system it may be easy to extend.
+
 ## Usage
 
 ``` php
