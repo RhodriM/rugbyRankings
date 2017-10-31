@@ -54,7 +54,7 @@ echo 'New Wales rating: ' . $output->getTeamBRating();   // 84.88
 ```
 ## Credits
 
-- [Rhodri Morris](https://github.com/:author_username)
+- [Rhodri Morris](https://github.com/RhodriM)
 - [All Contributors](https://github.com/RhodriM/rugbyRankings/contributors)
 
 ## License
